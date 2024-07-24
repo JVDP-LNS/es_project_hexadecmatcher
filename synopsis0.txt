@@ -1,0 +1,39 @@
+SYNOPSIS DRAFTS,
+
+Project Overview:
+Design a game console using LPC1768 microcontroller, featuring a game where players input hexadecimal characters based on visual cues displayed on an LCD.
+
+Components Used:
+
+LPC1768 microcontroller
+3 connectors
+1 timer for tracking time and generating delays
+8 LEDs for visual feedback and displaying time remaining
+1 16x2 characters LCD display for game messages
+4x4 matrix keyboard for inputing hexadecimal characters
+
+Game States:
+
+1.Start State / Difficulty Selector:
+
+Players choose difficulty (0-3) by pressing keys on the keyboard.
+Pressing any of the keys generates random hexadecimal values based on press duration (physical randomness produced by humans), and transitions the program to the Running State.
+
+2.Running:
+
+Display a randomly generated hexadecimal value on the first row of the LCD.
+Players input corresponding characters via the keyboard, which are appended to the second row of the LCD display.
+Each input character is compared with the corresponding character of the generated hexadecimal value:
+If mismatch occurs, transition to FailOutcome State.
+If characters match and input length matches the generated value, transition to WinOutcome State.
+
+3.Result:
+
+3.1.FailOutcome
+Display "YOU LOST" on the LCD.
+
+3.2.WinOutcome:
+Display "YOU WIN" on the LCD.
+
+
+This project offers an modest gaming experience utilizing various components and embedded programming logic to engage players in a minor challenge based on hexadecimal character recognition and input.
